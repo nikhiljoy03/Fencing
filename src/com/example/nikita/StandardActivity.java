@@ -19,7 +19,7 @@ public class StandardActivity extends Activity implements OnClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.standard_layout);
 		getActionBar().setTitle("Standard Layout");
-		getActionBar().setHomeButtonEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 //		Button done = (Button) findViewById(R.id.done);
 //		done.setOnClickListener(new View.OnClickListener()
 //		{

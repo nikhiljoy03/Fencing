@@ -1,12 +1,12 @@
 <resources>
 
     <string name="app_name">Fence Calculator</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="splash">Fencing Calculator</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="Choose">Choose one of the following : </string>
+    <string name="title_activity_main">Fencing Solutions</string>
+    <string name="Choose">Choose Type of Fence : </string>
     <string name="Custom">Customized Fence</string>
-    <string name="Standard">Standard Fence</string>
+    <string name="Standard">Standard Designs</string>
     <string name="customFence">Custom Fence</string>
     <string name="StandardFence">Standard Fence</string>
     <string name="Area">Area</string>

@@ -2,6 +2,7 @@ package com.example.nikita;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -15,7 +16,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		getActionBar().setTitle("Fence Calculator");
+		getActionBar().setTitle("Fencing Solutions");
 		Button custom = (Button) findViewById(R.id.button1);
 		Button standard = (Button) findViewById(R.id.Button01);
 
