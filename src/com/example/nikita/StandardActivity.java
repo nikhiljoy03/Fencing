@@ -47,7 +47,6 @@ public class StandardActivity extends Activity implements OnClickListener
 	{
 		switch (menuItem.getItemId()) {
 			case R.id.button_done:
-				process();
 				return true;
 
 			default:
@@ -153,7 +152,9 @@ public class StandardActivity extends Activity implements OnClickListener
 
 	public void onClick(View v)
 	{
-		// TODO Auto-generated method stub
-
+		if (v.getId() == R.id.button_done)
+		{
+			process();
+		}
 	}
 }
