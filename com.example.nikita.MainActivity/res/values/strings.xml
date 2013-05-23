@@ -1,0 +1,106 @@
+<resources>
+
+    <string name="app_name">Fence Calculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="Choose">Choose one of the following : </string>
+    <string name="Custom">Customized Fence</string>
+    <string name="Standard">Standard Fence</string>
+    <string name="customFence">Custom Fence</string>
+    <string name="StandardFence">Standard Fence</string>
+    <string name="Area">Length to be Fenced</string>
+    <string name="six">6</string>
+    <string name="eight_feet">8 ft</string>
+    <string name="fArea">fArea</string>
+    <string name="Length">Length</string>
+    <string name="Width">Width</string>
+    <string name="width">Width</string>
+    <string name="WireNumberLine">Number of Line Wires       : </string>
+    <string name="NumberWiresCross">Number of Cross Wires     : </string>
+    <string name="TypeOfPole">Type of Pole                        : </string>
+    <string name="HeightOfFence">Height of fence</string>
+    <string name="Ratio">Ratio of length to width : </string>
+    <string name="BarbedWire">Barbed Wire Size (Gauge) : </string>
+    <string name="NumberOfGates">Number Of gates                : </string>
+    <string name="HeightOfFenc">Height of Fence                  : </string>
+    <string name="DistanceBetweenPoles">Distance Between Poles   : </string>
+    <string name="SupportBetweenPoles">Support Between Poles  : </string>
+    <string name="PriceOfBarbedWire">Price of Barbed Wire</string>
+    <string name="PriceOfPole">Price of 1 Pole</string>
+    <string name="PriceOfBrace">Price of GI Binding wire(Rs/kg	)</string>
+    <string name="PriceOfJBolt">Price of 1 J Bolt</string>
+    <string name="LabourCharges">Labour Charges (per pole)</string>
+    <string name="NumberOfLabourers">Number of Labourers        : </string>
+    <string name="done">DONE</string>
+    <string name="rupees">Rs. </string>
+    <string name="pick">Pick one</string>
+	
+    <string-array name="unit">
+    	<item>feet</item>
+    	<item>meter</item>    
+    </string-array>
+    <string-array name="range">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="barbed">
+        <item>12x12</item>
+        <item>12x14</item>
+        <item>14x14</item>
+    </string-array>
+    <string-array name="second">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="third">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="list">
+        <item>cement</item>
+        <item>stone</item>
+    </string-array>
+    <string-array name="twelve">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="corners">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>corners</item>
+    </string-array>
+    <string-array name="fifteen">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="acre">
+        <item>acre</item>
+        <item>hectare</item>
+        <item>sq meter</item>
+    </string-array>
+
+    <string name="title_activity_image_picker">ImagePickerActivity</string>
+
+</resources>
