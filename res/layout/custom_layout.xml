@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="@string/customFence"
+        android:text="@string/StandardFence"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ScrollView
@@ -25,296 +25,364 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Area" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Ratio" />
-
-            <EditText
-                android:id="@+id/areaid"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="@string/Area" />
-
-            <Spinner
-                android:id="@+id/spinner1"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/acre" />
+                android:layout_marginBottom="20dp" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <EditText
+                    android:id="@+id/areaid"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:hint="@string/Area"
+                    android:inputType="numberDecimal"
+                    android:maxLength="6" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/areaid"
+                    android:entries="@array/unit" />
+            </RelativeLayout>
+
+            <!-- LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Length" />
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical" >
 
-            <EditText
-                android:id="@+id/len"
-                android:layout_width="112dp"
+                <TextView
+                    android:id="@+id/idText"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/Ratio" />
+
+                <EditText
+                    android:id="@+id/len"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Length"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+
+                <EditText
+                    android:id="@+id/wid"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Width"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" >
+                </EditText>
+            </LinearLayout-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none|numberDecimal" />
+                android:layout_marginBottom="20dp" >
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/wireLineTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/WireNumberLine" />
+
+                <Spinner
+                    android:id="@+id/planets_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/wireLineTitle"
+                    android:entries="@array/range" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/width" />
+                android:layout_marginBottom="20dp" >
 
-            <EditText
-                android:id="@+id/wid"
-                android:layout_width="112dp"
+                <TextView
+                    android:id="@+id/numbeWireTitle"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NumberWiresCross" />
+
+                <Spinner
+                    android:id="@+id/wires_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/numbeWireTitle"
+                    android:entries="@array/second" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" >
-            </EditText>
+                android:layout_marginBottom="20dp" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/barbedWireText"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/BarbedWire" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <Spinner
+                    android:id="@+id/barbed_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/barbedWireText"
+                    android:entries="@array/barbed" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/WireNumberLine" />
+                android:layout_marginBottom="20dp" >
 
-            <Spinner
-                android:id="@+id/planets_spinner"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:id="@+id/noOfGates"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NumberOfGates" />
+
+                <Spinner
+                    android:id="@+id/gates_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/noOfGates"
+                    android:entries="@array/third" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/range" />
+                android:layout_marginBottom="20dp" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/typePole"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/TypeOfPole" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <Spinner
+                    android:id="@+id/pole_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/typePole"
+                    android:entries="@array/list" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/NumberWiresCross" />
+                android:layout_marginBottom="20dp" >
 
-            <Spinner
-                android:id="@+id/wires_spinner"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:id="@+id/HeightFence"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/HeightOfFenc" />
+
+                <Spinner
+                    android:id="@+id/fence_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/HeightFence"
+                    android:entries="@array/range" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/second" />
+                android:layout_marginBottom="20dp" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/DistancePoles"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/DistanceBetweenPoles" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <Spinner
+                    android:id="@+id/dist_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/DistancePoles"
+                    android:entries="@array/twelve" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/BarbedWire" />
+                android:layout_marginBottom="20dp" >
 
-            <Spinner
-                android:id="@+id/barbed_spinner"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:id="@+id/supportPoles"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SupportBetweenPoles" />
+
+                <Spinner
+                    android:id="@+id/support_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/supportPoles"
+                    android:entries="@array/corners" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/barbed" />
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/rupees"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rupees" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <EditText
+                    android:id="@+id/barbed_price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rupees"
+                    android:hint="@string/PriceOfBarbedWire"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/NumberOfGates" />
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical" >
 
-            <Spinner
-                android:id="@+id/gates_spinner"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:id="@+id/rupeesPole"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rupees" />
+
+                <EditText
+                    android:id="@+id/poledist_price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rupeesPole"
+                    android:hint="@string/PriceOfPole"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/third" />
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/rupeesBrace"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rupees" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <EditText
+                    android:id="@+id/brace_price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rupeesBrace"
+                    android:hint="@string/PriceOfBrace"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/TypeOfPole" />
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical" >
 
-            <Spinner
-                android:id="@+id/pole_spinner"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:id="@+id/rupeesBolt"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rupees" />
+
+                <EditText
+                    android:id="@+id/bolt_price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rupeesBolt"
+                    android:hint="@string/PriceOfJBolt"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/list" />
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical" >
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
+                <TextView
+                    android:id="@+id/rupeesLabor"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rupees" />
 
-            <TextView
-                android:layout_width="fill_parent"
+                <EditText
+                    android:id="@+id/labourCharges"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/rupeesLabor"
+                    android:ellipsize="end"
+                    android:hint="@string/LabourCharges"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/HeightOfFenc" />
+                android:layout_marginBottom="20dp" >
 
-            <Spinner
-                android:id="@+id/fence_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/range" />
+                <TextView
+                    android:id="@+id/numLabors"
+                    style="@style/TitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NumberOfLabourers" />
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/DistanceBetweenPoles" />
-
-            <Spinner
-                android:id="@+id/dist_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/twelve" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/SupportBetweenPoles" />
-
-            <Spinner
-                android:id="@+id/support_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/corners" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/PriceOfBarbedWire" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/PriceOfPole" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/PriceOfBrace" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/PriceOfJBolt" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/LabourCharges" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="30dp" >
-            </View>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/NumberOfLabourers" />
-
-            <Spinner
-                android:id="@+id/number_spinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:entries="@array/fifteen" />
-
-            <Button
-                android:id="@+id/done"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/done" />
+                <Spinner
+                    android:id="@+id/number_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/numLabors"
+                    android:entries="@array/fifteen" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/BarbedWire" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/StandardFence" />
 
 </LinearLayout>

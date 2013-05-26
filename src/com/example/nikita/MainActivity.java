@@ -2,9 +2,7 @@ package com.example.nikita;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +14,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		getActionBar().setTitle("Fencing Solutions");
+		getActionBar().setTitle("Fence Calculator");
 		Button custom = (Button) findViewById(R.id.button1);
 		Button standard = (Button) findViewById(R.id.Button01);
 
@@ -47,14 +45,7 @@ public class MainActivity extends Activity
 
 	public void gotoStandard()
 	{
-		Intent next = new Intent(MainActivity.this, StandardActivity.class);
+		Intent next = new Intent(MainActivity.this, ImagePickerActivity.class);
 		startActivity(next);
 	}
-//
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu)
-//	{
-//		getMenuInflater().inflate(R.menu.activity_main, menu);
-//		return true;
-//	}
 }

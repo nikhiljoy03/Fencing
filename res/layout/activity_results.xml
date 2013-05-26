@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/app_blue"
+    android:orientation="vertical" >
+	<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    
+	    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+		    <ImageView
+		           android:id="@+id/imageButton2"
+		           android:layout_width="fill_parent"
+		           android:layout_height="wrap_content"
+		           android:src="@drawable/result_image"
+		           android:layout_marginTop="0dp"
+		  		/>
+		     <RelativeLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content" 
+		                android:layout_marginBottom="20dp"
+		                android:layout_marginLeft="10dp">
+						
+		                <TextView
+		                    android:id="@+id/totalfencingcost"
+		                    style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="@string/totalfencingcost" 
+		                    android:layout_marginRight="10dp"/>
+		
+		                <TextView
+		                    android:id="@+id/res_fencecost"
+		                    style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_toRightOf="@+id/totalfencingcost" />
+		            </RelativeLayout>
+		             <RelativeLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_marginBottom="20dp" 
+		                android:layout_marginLeft="10dp"
+		                android:layout_marginRight="10dp">
+		
+		                <TextView
+		                    android:id="@+id/daysrequired"
+		                    style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="@string/daysrequired" 
+		                    android:layout_marginLeft="10dp"/>
+		
+		                <TextView
+		                    android:id="@+id/res_daysreq"
+		                    style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_toRightOf="@+id/daysrequired"
+		                    android:entries="@array/barbed" />
+		            </RelativeLayout>
+		             <RelativeLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_marginBottom="20dp" 
+		                android:layout_marginLeft="10dp">
+		
+		                <TextView
+		                    android:id="@+id/barbedwireres"
+		                    style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="@string/barbedwirebundles"
+		                    android:layout_marginLeft="10dp"
+		                    android:layout_marginRight="10dp" />
+		
+		                <TextView
+		                    android:id="@+id/res_barbed"
+		                   style="@style/TitleStyle"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_toRightOf="@+id/barbedwireres"/>
+		            </RelativeLayout>
+		    		   <ImageView
+			           android:id="@+id/resultButton"
+			           android:layout_width="wrap_content"
+			           android:layout_height="wrap_content"
+			           android:src="@drawable/ordernow"
+			           android:layout_marginBottom="20dp"
+			           android:layout_gravity="center"
+		  			/>
+	    		   <TextView
+	                    android:id="@+id/number"
+	                   style="@style/TitleStyle"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center"
+	                    android:text="@string/number"
+	                    android:entries="@array/barbed" />
+    		</LinearLayout>
+    	</ScrollView>
+</LinearLayout>

@@ -2,6 +2,9 @@ package com.example.nikita;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -56,104 +59,119 @@ public class StandardActivity extends Activity implements OnClickListener
 	}
 
 	@SuppressLint("UseValueOf")
-	public void process()
-	{
+	public void process() {
+		Intent myIntent= getIntent();
+		
+		
 		EditText area = (EditText) findViewById(R.id.areaid);
-		EditText len = (EditText) findViewById(R.id.len);
-		EditText width = (EditText) findViewById(R.id.wid);
+//		EditText len = (EditText) findViewById(R.id.len);
+//		EditText width = (EditText) findViewById(R.id.wid);
 		EditText barbePrice = (EditText) findViewById(R.id.barbed_price);
 		EditText bracePrice = (EditText) findViewById(R.id.brace_price);
 		EditText boltPrice = (EditText) findViewById(R.id.bolt_price);
 		EditText polePrice = (EditText) findViewById(R.id.poledist_price);
+		EditText labourCharges = (EditText) findViewById(R.id.labourCharges); 
 
-		Spinner wireSpinner = (Spinner) findViewById(R.id.planets_spinner);
+		//Spinner wireSpinner = (Spinner) findViewById(R.id.planets_spinner);
 		Spinner unit = (Spinner) findViewById(R.id.spinner1);
-		Spinner crossSpinner = (Spinner) findViewById(R.id.wires_spinner);
+		//Spinner crossSpinner = (Spinner) findViewById(R.id.wires_spinner);
 		Spinner barbedSpinner = (Spinner) findViewById(R.id.barbed_spinner);
 		Spinner gateSpinner = (Spinner) findViewById(R.id.gates_spinner);
-		Spinner poleSpinner = (Spinner) findViewById(R.id.pole_spinner);
-		Spinner fenceSpinner = (Spinner) findViewById(R.id.fence_spinner);
-		Spinner distanceSpinner = (Spinner) findViewById(R.id.dist_spinner);
-		Spinner supportSpinner = (Spinner) findViewById(R.id.support_spinner);
-		Spinner lineSpinner = (Spinner) findViewById(R.id.planets_spinner);
-		Spinner labourSpinner = (Spinner) findViewById(R.id.number_spinner);
+		//Spinner poleSpinner = (Spinner) findViewById(R.id.pole_spinner);
 
+		Spinner supportSpinner = (Spinner) findViewById(R.id.support_spinner);
+		//Spinner lineSpinner = (Spinner) findViewById(R.id.planets_spinner);
+		//Spinner labourSpinner = (Spinner) findViewById(R.id.number_spinner);
+
+		//int labourChargesValue = Integer.parseInt(labourCharges.getText().toString());
 		String choice = unit.getSelectedItem().toString();
 		int areaValue = Integer.parseInt(area.getText().toString());
-		int lenValue = Integer.parseInt(len.getText().toString());
-		int widthValue = Integer.parseInt(width.getText().toString());
-		int wireValue = Integer.parseInt(wireSpinner.getSelectedItem().toString());
-		int barbedPriceValue = Integer.parseInt(barbePrice.getText().toString());
-		int crossValue = Integer.parseInt(crossSpinner.getSelectedItem().toString());
+
+		int wireValue = myIntent.getIntExtra("line", 1);
+		//int barbedPriceValue = Integer
+				//.parseInt(barbePrice.getText().toString());
+		int crossValue = myIntent.getIntExtra("cross", 1);
 		String barbedValue = barbedSpinner.getSelectedItem().toString();
-		int gateValue = Integer.parseInt(gateSpinner.getSelectedItem().toString());
-		String poleValue = poleSpinner.getSelectedItem().toString();
-		int fenceValue = Integer.parseInt(fenceSpinner.getSelectedItem().toString());
-		int distanceValue = Integer.parseInt(distanceSpinner.getSelectedItem().toString());
+		int gateValue = Integer.parseInt(gateSpinner.getSelectedItem()
+				.toString());
+		//String poleValue = poleSpinner.getSelectedItem().toString();
+		//int fenceValue = 6;//Integer.parseInt(fenceSpinner.getSelectedItem()
+				//.toString());
+		//int distanceValue = 8;//Integer.parseInt(distanceSpinner.getSelectedItem()
+				//.toString());
 		String supportValue = supportSpinner.getSelectedItem().toString();
-		int lineValue = Integer.parseInt(lineSpinner.getSelectedItem().toString());
-		int labourValue = Integer.parseInt(labourSpinner.getSelectedItem().toString());
-		int bracePriceValue = Integer.parseInt(bracePrice.getText().toString());
-		int boltPriceValue = Integer.parseInt(boltPrice.getText().toString());
-		int poleDistPriceValue = Integer.parseInt(polePrice.getText().toString());
+		//int lineValue = Integer.parseInt(lineSpinner.getSelectedItem()
+		//		.toString());
+		//int labourValue = Integer.parseInt(labourSpinner.getSelectedItem()
+		//		.toString());
+		//int bracePriceValue = Integer.parseInt(bracePrice.getText().toString());
+		//int boltPriceValue = Integer.parseInt(boltPrice.getText().toString());
+		//int poleDistPriceValue = Integer.parseInt(polePrice.getText()
+		//		.toString());
 
-		Double unitTemp = 43560.0;
-		if (choice.equals("hectare"))
+//		Double unitTemp = 43560.0;
+//		if (choice.equals("hectare")) {
+//			unitTemp = 107639.0;
+//		} else if (choice.equals("sq meter")) {
+//			unitTemp = 10.7639;
+//		}
+//		Double a1 = areaValue * unitTemp;
+//		//Double ratio = (double) (lenValue / widthValue);
+//
+//		Double l1 = (Math.sqrt(a1 / ratio)) * ratio;
+//		Double l2 = Math.sqrt(a1 / ratio);
+		Double unitTemp = new Double(3.281);
+		if (choice.equals("feet"))
 		{
-			unitTemp = 107639.0;
-		} else if (choice.equals("sq meter"))
-		{
-			unitTemp = 10.7639;
+			unitTemp = new Double(1);
 		}
-		Double a1 = areaValue * unitTemp;
-		Double ratio = (double) (lenValue / widthValue);
-
-		Double l1 = (Math.sqrt(a1 / ratio)) * ratio;
-		Double l2 = Math.sqrt(a1 / ratio);
-		Double l3 = l1 * 2 + l2 * 2 - (gateValue * 6);
-		Double l4 = l3 * wireValue;
-		Double poles = l3 / (distanceValue + 0.328);
-		Double l5 = Math.sqrt(((fenceValue * fenceValue) + (distanceValue * distanceValue))) * crossValue * (poles.intValue() - 1);
-		Double tl = l4 + l5;
-		int divValue = 24;
-		if (barbedValue.equals("12x14"))
-		{
-			divValue = 27;
-		} else if (barbedValue.equals("14x14"))
-		{
-			divValue = 34;
+		Double l3 = (areaValue * unitTemp) - (gateValue * 6);
+		Double l_len = l3 * wireValue ;
+		Double poles = l3/(8.328);
+		Double c_len=10*crossValue*(poles-1);
+		Double t_len=c_len+l_len;
+		
+		int divValue = 20;
+		if (barbedValue.equals("12x14")) {
+			divValue = 28;
+		} else if (barbedValue.equals("14x14")) {
+			divValue = 36;
 		}
-		Double b = tl / divValue;
-		Double bundles = b / 30;
-		int support = 0;
-		if (supportValue.equals("corners"))
-		{
-			support = 8 + gateValue;
-		} else
-		{
-			support = poles.intValue() / Integer.parseInt(supportValue);
+		Double barb = t_len / divValue;
+		Double bundle=barb/30;
+		int brace = 0;
+		if (supportValue.equals("corners")) {
+			brace = 8 + gateValue*2;
+		} else {
+			brace = poles.intValue() / Integer.parseInt(supportValue) * 2 + gateValue * 2;
 		}
-		int jb = poles.intValue() * wireValue;
-		Double temp = (tl) / (int) (6.5 * labourValue * 8);
-		int days = temp.intValue();
-		Double cost_l = (double) (days * labourValue);
-		Double cost_b = ratio * barbedPriceValue;
-//		Double cost_o = support * bracePriceValue + jb * boltPriceValue + p * poleDistPriceValue;
-//		Double cost_t = cost_l + cost_b + cost_o;
-//		new AlertDialog.Builder(this).setTitle("Final Sumation").setMessage("COST : " + cost_t.intValue() + "        Days :" + days + "         Bundles : " + bundles.intValue())
-//				.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-//				{
-//					public void onClick(DialogInterface dialog, int which)
-//					{
-//					}
-//				}).show();
-		// 19) Display Cost_T and Days to USER
+		Double binding=0.1*barb;
+		Double days=(l3)/(520);
+		Double cost_l=poles*60;
+		Double cost_b=barb*70;
+		Double cost_o=brace*180+binding*70+poles*180;
+		Double cost_t=cost_l+ cost_b+ cost_o;
+		
+//		new AlertDialog.Builder(this)
+//				.setTitle("Final Sumation")
+//				.setMessage(
+//						"COST : " + cost_t.intValue() + "        Days :" + Math.ceil(days)
+//								+ "         Bundles : " + bundle.intValue())
+//				.setPositiveButton("Yes",
+//						new DialogInterface.OnClickListener() {
+//							public void onClick(DialogInterface dialog,
+//									int which) {
+//							}
+//						}).show();
+		Intent i = new Intent(StandardActivity.this, ResultsActivity.class);
+		i.putExtra("cost", Integer.toString(cost_t.intValue()));
+    	i.putExtra("bundle",  Integer.toString(bundle.intValue()));
+    	i.putExtra("days", Integer.toString(days.intValue()));
+		startActivity(i);
 	}
 
-	public void onClick(View v)
-	{
-		if (v.getId() == R.id.button_done)
-		{
+	public void onClick(View v) {
+		if (v.getId() == R.id.button_done) {
 			process();
 		}
 	}
